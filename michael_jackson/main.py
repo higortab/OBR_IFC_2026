@@ -16,12 +16,12 @@ from pybricks.media.ev3dev import SoundFile, ImageFile
 ev3 = EV3Brick()
 
 left_motor = Motor(Port.B)
-right_motor = Motor(Port.C)
+right_motor = Motor(Port.A)
 
 robot = DriveBase(left_motor, right_motor, wheel_diameter=55.5, axle_track=104)
 # Write your program here.
 
-robot.straight(500)
+robot.straight(-500)
 ev3.speaker.play_file('sons/HeeJackson.wav')
 robot.turn(360)
 
