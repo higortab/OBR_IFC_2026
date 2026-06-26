@@ -17,7 +17,7 @@ def degrees_to_mm(degrees):
   return degrees * MM_PER_DEGREE
 
 
-class Motors:
+class MotionMotors:
   def __init__(self, portL, portR):
     self._left_motor = Motor(portL, Direction.COUNTERCLOCKWISE)
     self._right_motor = Motor(portR, Direction.COUNTERCLOCKWISE)
@@ -25,6 +25,14 @@ class Motors:
     """Reseta os encoders ao iniciar a classe"""
     self._left_motor.reset_angle(0)
     self._right_motor.reset_angle(0)
+
+  @property
+  def left(self):
+    return self._left_motor
+
+  @property
+  def right(self):
+    return self._right_motor
 
   def get_average_angle(self):
     """Usa a media dos encoders dos dois motores como referencia de distancia"""

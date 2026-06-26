@@ -11,8 +11,7 @@ COLORS = {
 }
 
 # Quanto menor, mais exigente.
-# Ajuste nos testes.
-LIMIT = 0.12
+LIMIT = 0.10
 
 
 def normalize(rgb):
@@ -61,6 +60,9 @@ class RgbDetector:
   def __init__(self, port):
     self._sensor = ColorSensor(port)
 
-  def raw_color(self):
+  def raw(self):
     """Retorna a classificacao imediata sem confirmacao, util para debug"""
     return classify(self._sensor.rgb())
+
+# 18.1 cm
+# 20.5cm
