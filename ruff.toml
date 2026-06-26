@@ -1,0 +1,25 @@
+indent-width = 2
+
+# reflection
+
+# Original
+# Branco: 37 37 37
+# Preto: 2 2 3
+# Verde: 3 3 3
+# Vermelho: 28 28 29
+# Prata: 20 20 21
+
+# Generico
+# Branco: 51 51 52, 56 55 58
+# Preto: 4 4 4, 7 7 7
+# Verde: 8 8 8, 8 8 8, 6 6 7
+# Vermelho: 41 41 41, 41 41 41
+# Prata: 34 34 35, 29 28 31
+
+# rgb
+
+# branco: 22 34 40, 24 38 45, 22 34 41 YELL, 23 35 42 YELL
+# preto: 1 5 0, 1 4 0, 1 4 0 GREE, 1 4 0 BLACK
+# verde: 2 15 5, 1 15 5, 2 16 6 GREE, 2 16 6 GREE
+# vermelho: 19 3 0, 20 3 0, 20 4 0 RED, 20 3 0 RED
+# prata: 14 26 19, 13 27 17, 13 26 18 BLUE, 13 25 19 BLUE
