@@ -1,6 +1,6 @@
 from pybricks.hubs import EV3Brick
 from pybricks.ev3devices import Motor, ColorSensor, UltrasonicSensor
-from pybricks.parameters import Port
+from pybricks.parameters import Port, Direction
 from pybricks.robotics import DriveBase
  
 from mapa import Mapa
@@ -12,11 +12,10 @@ from resgate import Resgate
  
 ev3 = EV3Brick()
  
-motorE = Motor(Port.B)
-motorD = Motor(Port.A)
+motorE = Motor(Port.B, Direction.COUNTERCLOCKWISE)
+motorD = Motor(Port.A, Direction.COUNTERCLOCKWISE)
  
-robot = DriveBase(motorE, motorD, 56, 114)
- 
+robot = DriveBase(motorE, motorD, 56, 110)
 ultra = UltrasonicSensor(Port.S2)
 cor   = ColorSensor(Port.S1)
  
@@ -44,4 +43,3 @@ print("Zona vermelha:", mapa.zona_vermelha)
 # ------------------------
  
 res.executar(nav)
- 

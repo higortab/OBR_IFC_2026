@@ -7,12 +7,12 @@ from pybricks.tools import wait
 # AJUSTES — mude esses números conforme os testes no robô
 # ============================================================
 
-GRAUS_FECHAR_GARRA  = 90    # graus que o motor C gira para fechar a garra
-GRAUS_ABRIR_GARRA   = 90    # graus que o motor C gira para abrir a garra
-GRAUS_VOLTAR_SENSOR = 90    # graus para devolver o sensor de cor à posição original
+GRAUS_FECHAR_GARRA  = 30    # graus que o motor C gira para fechar a garra
+GRAUS_ABRIR_GARRA   = 30  # graus que o motor C gira para abrir a garra
+GRAUS_VOLTAR_SENSOR = -30    # graus para devolver o sensor de cor à posição original
 
-DIST_PEGAR          = 40    # distância em mm para parar perto da bolinha (4 cm)
-DIST_ZONA           = 80    # distância em mm para parar perto da zona
+DIST_PEGAR          = 60    # distância em mm para parar perto da bolinha (4 cm)
+DIST_ZONA           = 40    # distância em mm para parar perto da zona
 
 VELOCIDADE_GARRA    = 100   # velocidade do motor da garra (graus/s)
 VELOCIDADE_NAV      = 150   # velocidade de navegação
@@ -192,7 +192,7 @@ class Resgate:
               - Continua o zigue-zague
         4. Quando entregar as 3 bolinhas, acha a fita preta e sai
         """
-        linhas = 20  # mesmo valor do zigzag
+        linhas = 10  # mesmo valor do zigzag
 
         for i in range(linhas):
 

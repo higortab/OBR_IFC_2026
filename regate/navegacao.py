@@ -13,7 +13,7 @@ class Navegacao:
         self.mapa = mapa
         self.mov = movimento
 
-        self.DIST = 120
+        self.DIST = 50
 
     # ------------------------
 
@@ -59,7 +59,7 @@ class Navegacao:
 
                 self.verificar()
 
-                # 🚨 segurança portas
+                # segurança portas
                 if self.cor.color() in ["GRAY", "BLACK"] and self.ultra.distance() < 100:
 
                     self.robot.stop()
