@@ -11,21 +11,16 @@ MAX_CONFIRM_MM = 80  # deve confirmar em até 80 mm percorridos
 
 
 class UltrasonicDetector:
-  def __init__(self):
-    self.reset()
+  def __init__(self, port):
+    self._left_sensor = UltrasonicSensor(port)
 
   def reset(self):
     self._state = "IDLE"
     self._start_distance_mm = 0
-    self._last_reading = None
+    self._last_reading = False
 
   def update(self, traveled_mm):
-    """
-    traveled_mm = distância total percorrida pelo robô.
-    Retorna:
-        None
-        "OBSTACLE"
-    """
+    """traveled_mm = distância total percorrida pelo robô"""
 
     reading = ultra.distance()
 
@@ -37,7 +32,7 @@ class UltrasonicDetector:
         self._start_distance_mm = traveled_mm
         self._last_reading = reading
 
-      return None
+      return False
 
     # ---------- Estado CHECKING ----------
 
@@ -47,23 +42,23 @@ class UltrasonicDetector:
     # continua aproximando do objeto
     if reading <= CONFIRM_DISTANCE and reading <= self._last_reading:
       self.reset()
-      return "OBSTACLE"
+      return "True"
 
     # Sumiu rapidamente
     # provavelmente lombada
     if reading > START_DISTANCE:
       self.reset()
-      return None
+      return False
 
     # Ficou muito tempo praticamente igual
     # provavelmente rampa
     if traveled >= MAX_CONFIRM_MM:
       self.reset()
-      return None
+      return False
 
     self._last_reading = reading
 
-    return None
+    return False
 
   def raw(self):
     return ultra.distance()
