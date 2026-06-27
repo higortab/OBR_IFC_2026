@@ -13,8 +13,8 @@ sensor_direito = ColorSensor(Port.S4)
 
 # ========== MOTORES ==========
 # Motores invertidos
-motor_esquerdo = Motor(Port.B, Direction.COUNTERCLOCKWISE)
-motor_direito = Motor(Port.A, Direction.COUNTERCLOCKWISE)
+motor_esquerdo = Motor(Port.A, positive_direction=Direction.COUNTERCLOCKWISE)
+motor_direito = Motor(Port.C, positive_direction=Direction.COUNTERCLOCKWISE)
 
 # ========== CONSTANTES AJUSTADAS PARA CURVAS ==========
 BASE_SPEED = 150          # Reduzido para fazer curvas (era 200)
